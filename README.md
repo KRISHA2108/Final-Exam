@@ -1,6 +1,48 @@
 # final_exam
 
 
+# 📌 Auction App - Flutter Practical Exam
+This is a Flutter Auction App built using SQLite for local storage and Firestore for cloud storage. The app allows users to perform CRUD operations on products and mark items for auction, storing them in Firestore.
+
+# 📋 Features
+✅ Splash Screen
+✅ Home Page (List of all products)
+✅ Auction Products Page (Displays auctioned items from Firestore)
+✅ CRUD Operations with SQLite
+✅ Mark Products for Auction and store them in Firestore
+✅ Remove Auctioned Products from Firestore
+
+# 🏗 Modules Implemented
+1️⃣ Screens
+SplashScreen → Initial loading screen
+
+HomePage → Displays products & allows CRUD operations
+
+AuctionProductsPage → Displays auctioned products from Firestore
+
+# 2️⃣ Functionalities
+Display products in a ListTile on the Home Page
+
+Add a new product using a Floating Action Button (FAB) and AlertDialog
+
+Perform CRUD operations on products stored in SQLite
+
+Mark a product for auction and store it in Firestore
+
+Display auctioned products from Firestore in the AuctionProductsPage
+
+Remove auctioned products from Firestore
+
+# 🛠 Tech Stack
+Flutter (Dart)
+
+SQLite (Local Database)
+
+Firestore (Cloud Database)
+
+
+
+
 
 
 https://github.com/user-attachments/assets/dbe221da-062d-44e2-abfa-d7098c9dc97c
