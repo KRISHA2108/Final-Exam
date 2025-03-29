@@ -1,0 +1,90 @@
+// import 'package:flutter/material.dart';
+// import 'package:sqflite/sqflite.dart';
+// import 'package:path/path.dart';
+//
+// class CartPage extends StatelessWidget {
+//   Future<List<Map<String, dynamic>>> getCartItems() async {
+//     final database = await openDatabase(
+//       join(await getDatabasesPath(), 'cart.db'),
+//       onCreate: (db, version) {
+//         return db.execute(
+//           "CREATE TABLE cart(id INTEGER PRIMARY KEY, name TEXT, price REAL, date TEXT)",
+//         );
+//       },
+//       version: 1,
+//     );
+//
+//     return database.query('cart');
+//   }
+//
+//   Future<void> deleteItem(int id) async {
+//     final database = await openDatabase(
+//       join(await getDatabasesPath(), 'cart.db'),
+//     );
+//
+//     await database.delete('cart', where: 'id = ?', whereArgs: [id]);
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Cart')),
+//       body: FutureBuilder(
+//         future: getCartItems(),
+//         builder: (context, AsyncSnapshot<List<Map<String, dynamic>>> snapshot) {
+//           if (!snapshot.hasData) return CircularProgressIndicator();
+//           final cartItems = snapshot.data!;
+//           return ListView.builder(
+//             itemCount: cartItems.length,
+//             itemBuilder: (context, index) {
+//               return ListTile(
+//                 title: Text(cartItems[index]['name']),
+//                 subtitle: Text(
+//                     '₹${cartItems[index]['price']} - ${cartItems[index]['date']}'),
+//                 trailing: IconButton(
+//                   icon: Icon(Icons.delete),
+//                   onPressed: () {
+//                     deleteItem(cartItems[index]['id']);
+//                   },
+//                 ),
+//               );
+//             },
+//           );
+//         },
+//       ),
+//     );
+//   }
+// }
+
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'controller/product_controller.dart';
+
+class CartPage extends StatelessWidget {
+  final ProductController productController = Get.find();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Auction Products')),
+      body: Obx(() {
+        return ListView.builder(
+          itemCount: productController.auctionProducts.length,
+          itemBuilder: (context, index) {
+            final product = productController.auctionProducts[index];
+            return ListTile(
+              title: Text(product.name),
+              subtitle: Text("${product.category} - ${product.price}"),
+              trailing: IconButton(
+                icon: Icon(Icons.delete),
+                onPressed: () {
+                  productController.removeFromAuction(product);
+                },
+              ),
+            );
+          },
+        );
+      }),
+    );
+  }
+}

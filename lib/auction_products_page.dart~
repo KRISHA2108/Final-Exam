@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'controller/product_controller.dart';
+
+class AuctionProductsPage extends StatefulWidget {
+  @override
+  State<AuctionProductsPage> createState() => _AuctionProductsPageState();
+}
+
+class _AuctionProductsPageState extends State<AuctionProductsPage> {
+  final ProductController productController = Get.find();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Auction Products')),
+      body: Obx(() {
+        return ListView.builder(
+          itemCount: productController.auctionProducts.length,
+          itemBuilder: (context, index) {
+            final product = productController.auctionProducts[index];
+            return ListTile(
+              title: Text(product.name),
+              subtitle: Text("${product.category} - ${product.price}"),
+              trailing: IconButton(
+                icon: const Icon(Icons.delete),
+                onPressed: () {
+                  productController.removeFromAuction(product);
+                },
+              ),
+            );
+          },
+        );
+      }),
+    );
+  }
+}
