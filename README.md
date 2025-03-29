@@ -40,15 +40,7 @@ SQLite (Local Database)
 
 Firestore (Cloud Database)
 
-
-
-
-
-
 https://github.com/user-attachments/assets/dbe221da-062d-44e2-abfa-d7098c9dc97c
-
-
-
 
 <img src = "https://github.com/user-attachments/assets/ead29466-e201-4873-9671-6e473c809ae2" width= "200" >
 <img src = "https://github.com/user-attachments/assets/eac72522-61a8-498f-aec8-94d735716040" width= "200" >
@@ -62,3 +54,4 @@ https://github.com/user-attachments/assets/dbe221da-062d-44e2-abfa-d7098c9dc97c
 <img src = "https://github.com/user-attachments/assets/a9693f94-6314-4f9a-8343-5660a866f3a0" width= "200" >
 
 <img src = "https://github.com/user-attachments/assets/2d762f50-1b64-4624-af0f-02a269ae9d50" width= "700" >
+<img src = "https://github.com/user-attachments/assets/e84eee3f-ab33-40b8-be5c-8bc8e9cc70d8" width= "700" >
